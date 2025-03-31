@@ -102,7 +102,7 @@ export const Layout = () => {
       <footer className="bg-[#1f1f1f] text-[#a8a8a8] py-4 px-6 border-t border-[#3f3f3f]">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="text-sm">
-            © 2024 Social Poster. All rights reserved.
+            © {new Date().getFullYear()} Social Poster. All rights reserved.
           </div>
           <div className="flex items-center space-x-4">
             <a
