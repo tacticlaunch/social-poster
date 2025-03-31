@@ -43,7 +43,7 @@ A web application for creating social media posts from Telegram messages. Easily
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/social-poster.git
+   git clone https://github.com/tacticlaunch/social-poster.git
    cd social-poster
    ```
 
@@ -140,4 +140,4 @@ MIT
 
 ---
 
-Created with ❤️ by [Your Name] 
+Created with ❤️ by Alexey Elizarov
