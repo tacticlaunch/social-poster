@@ -106,34 +106,40 @@ const Login = () => {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           {step === 'api' && (
-            <>
-              <div>
-                <label className="block text-sm font-medium text-white mb-1">
-                  Telegram API ID
-                </label>
-                <input
-                  type="text"
-                  value={apiId}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setApiId(e.target.value)}
-                  className="w-full p-2 bg-[#1f1f1f] border border-[#3f3f3f] rounded-md text-white focus:outline-none focus:border-[#4f4f4f]"
-                  placeholder="Enter your API ID"
-                  required
-                />
+            <div className="space-y-4">
+              <div className="text-sm text-[#a8a8a8] space-y-2">
+                <p>To get your API credentials:</p>
+                <ol className="list-decimal list-inside space-y-1">
+                  <li>Go to <a href="https://my.telegram.org/auth" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">my.telegram.org</a></li>
+                  <li>Log in with your phone number</li>
+                  <li>Click on "API development tools"</li>
+                  <li>Create a new application</li>
+                  <li>Copy the "api_id" and "api_hash" values</li>
+                </ol>
               </div>
-              <div>
-                <label className="block text-sm font-medium text-white mb-1">
-                  Telegram API Hash
-                </label>
-                <input
-                  type="text"
-                  value={apiHash}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setApiHash(e.target.value)}
-                  className="w-full p-2 bg-[#1f1f1f] border border-[#3f3f3f] rounded-md text-white focus:outline-none focus:border-[#4f4f4f]"
-                  placeholder="Enter your API Hash"
-                  required
-                />
+              <div className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium mb-1 text-white">API ID</label>
+                  <input
+                    type="text"
+                    value={apiId}
+                    onChange={(e) => setApiId(e.target.value)}
+                    className="w-full p-2 bg-[#2f2f2f] border border-[#3f3f3f] rounded-md text-white focus:outline-none focus:border-[#4f4f4f]"
+                    placeholder="Enter your API ID"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-1 text-white">API Hash</label>
+                  <input
+                    type="text"
+                    value={apiHash}
+                    onChange={(e) => setApiHash(e.target.value)}
+                    className="w-full p-2 bg-[#2f2f2f] border border-[#3f3f3f] rounded-md text-white focus:outline-none focus:border-[#4f4f4f]"
+                    placeholder="Enter your API Hash"
+                  />
+                </div>
               </div>
-            </>
+            </div>
           )}
 
           {step === 'phone' && (

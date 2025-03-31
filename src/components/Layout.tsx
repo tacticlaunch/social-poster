@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useLocation, Navigate, Outlet } from 'react-router-dom';
+import { Link, useLocation, Navigate, Outlet, useNavigate } from 'react-router-dom';
 
 import { isLoggedIn, logout } from '@/services/telegramService';
 import Settings from './Settings';
@@ -8,6 +8,7 @@ import Settings from './Settings';
 
 export const Layout = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [authenticated, setAuthenticated] = useState(false);
 
@@ -80,7 +81,10 @@ export const Layout = () => {
             <div className="flex items-center space-x-4">
               <Settings />
               <button
-                onClick={logout}
+                onClick={() => {
+                  logout();
+                  navigate('/');
+                }}
                 className="text-[#a8a8a8] hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               >
                 Logout
